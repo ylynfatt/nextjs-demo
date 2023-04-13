@@ -17,7 +17,7 @@ export default function Search() {
         );
         const data = await res.json();
         const moviesData: Movie[] = data.results;
-        setMovies(moviesData)
+        // setMovies(moviesData)
     }
 
     // useEffect(() => {
