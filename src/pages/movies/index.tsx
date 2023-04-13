@@ -51,7 +51,12 @@ export default function Movies({ movies }: Props) {
       <ul className='grid grid-cols-4 gap-4'>
           {movies.map((movie: Movie) => (
             <li key={ movie.id }>
-              <Image placeholder='blur' src={imagePath + movie.poster_path} alt={movie.title + ' poster'} width={ 280 } height={ 100 } />
+              <Image
+                src={imagePath + movie.poster_path}
+                alt={movie.title + ' poster'}
+                width={ 280 }
+                height={ 100 }
+              />
               {/* <img src={imagePath + movie.poster_path} alt={movie.title + ' poster'} /> */}
               <Link href={'/movies/' + movie.id}>{movie.title}</Link>
             </li>
