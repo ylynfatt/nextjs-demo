@@ -75,20 +75,16 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     let movie: Movie = { id: 0, title: '', overview: '', release_date: ''};
     try {
         const id = params?.id;
-    //     const res = await fetch(
-    //         `${apiUrl}/movie/${id}?api_key=${process.env.TMDB_API_KEY}`
-    //     );
-    //     const movie: Movie = await res.json();
 
-    await axios.get(`${apiUrl}/movie/${id}?api_key=${process.env.TMDB_API_KEY}`)
-    .then(function (resp) {
-      console.log(resp.data.results);
-      movie = resp.data.results;
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
+        await axios.get(`${apiUrl}/movie/${id}?api_key=${process.env.TMDB_API_KEY}`)
+        .then(function (resp) {
+            // console.log(resp);
+            movie = resp.data;
+        })
+        .catch(function (error) {
+            // handle error
+            console.log("error", error);
+        })
 
         // By returning { props: item }, the StaticPropsDetail component
         // will receive `item` as a prop at build time
