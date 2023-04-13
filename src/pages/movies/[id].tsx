@@ -15,16 +15,22 @@ export default function Movie({ movie }: Props) {
 
     return (
         <>
-            <h2 className='text-2xl'>{movie.title}</h2>
-            <p>Released on {movie.release_date}</p>
-            <p>{movie.overview}</p>
+        <div className='w-full lg:max-w-full lg:flex'>
             <Image
                 src={imagePath + movie.poster_path}
                 alt={movie.title + ' poster'}
                 width={ 280 }
                 height={ 100 }
+                className='h-48 lg:h-auto lg:w-52 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden'
             />
-            <Link href={'/movies'} className="flex justify-center rounded-md bg-indigo-600 px-3 py-2 my-2 text-sm font-semibold text-white hover:bg-indigo-500">Return to Movies</Link>
+            <div className='movie-details border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col leading-normal'>
+                <h2 className='text-4xl mb-2'>{movie.title}</h2>
+                <p className='text-sm text-gray-600'>Status: {movie.status}</p>
+                <p className='text-sm text-gray-600 mb-2'>Released on {movie.release_date}</p>
+                <p>{movie.overview}</p>
+            </div>
+        </div>
+        <Link href={'/movies'} className="flex w-52 justify-center rounded-md bg-indigo-600 px-3 py-2 my-2 text-sm font-semibold text-white hover:bg-indigo-500">Return to Movies</Link>
         </>
     )
 }

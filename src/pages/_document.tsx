@@ -1,13 +1,17 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import Nav from '../components/Nav';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className="p-5">
-        <Nav />
-        <Main />
+      <body>
+        <Navbar />
+        <div className="p-5">
+          <Main />
+        </div>
+        <Footer />
         <NextScript />
       </body>
     </Html>
