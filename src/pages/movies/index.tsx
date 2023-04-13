@@ -17,13 +17,6 @@ export const getStaticProps: GetStaticProps = async () => {
   // Call an external API endpoint to get movies.
   // You can use any data fetching library
   let movies: Movie[] = [];
-  // try {
-  //   const res = await fetch(`${apiUrl}/movie/popular?api_key=${process.env.TMDB_API_KEY}`)
-  //   const data = await res.json()
-  //   movies = data.results;
-  // } catch(err) {
-  //   console.log(err)
-  // }
 
   await axios.get(`${apiUrl}/movie/popular?api_key=${process.env.TMDB_API_KEY}`)
     .then(function (resp) {
