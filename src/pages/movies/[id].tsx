@@ -18,7 +18,7 @@ export default function Movie({ movie }: Props) {
             <h2 className='text-2xl'>{movie.title}</h2>
             <p>Released on {movie.release_date}</p>
             <p>{movie.overview}</p>
-            <Image src={imagePath + movie.poster_path} alt={movie.title + ' poster'} width={ 280 } height={ 100 } />
+            <Image src={imagePath + movie.poster_path} alt={movie.title + ' poster'} width={ 280 } height={ 100 } placeholder="blur" />
             <Link href={'/movies'} className="flex justify-center rounded-md bg-indigo-600 px-3 py-2 my-2 text-sm font-semibold text-white hover:bg-indigo-500">Return to Movies</Link>
         </>
     )
