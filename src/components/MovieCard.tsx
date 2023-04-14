@@ -22,7 +22,7 @@ export default function MovieCard({ movie }: Props) {
                     className='border-b'
                 />
                 <div className='p-4'>
-                    <h2 className='text-gray-800'>{movie.title}</h2>
+                    <h2 className='text-teal-800'>{movie.title}</h2>
                 </div>
             </Link>
         </div>
